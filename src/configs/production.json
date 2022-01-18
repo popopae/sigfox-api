@@ -15,5 +15,10 @@
     "cors": {
         "origin": "your.domain.com",
         "credentials": true
+    },
+    "sigFox": {
+        "api_url": "https://api.sigfox.com/v2/",
+        "basic_username": "613716e8e833d954dcd18878",
+        "basic_password": "9144f051f08bace6173f9ba894e57875"
     }
 }
