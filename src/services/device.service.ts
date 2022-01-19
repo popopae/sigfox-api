@@ -1,4 +1,3 @@
-import { HttpException } from '@/exceptions/HttpException';
 import { DeviceTypeResponse } from '@/interfaces/payloads/device/deviceTypeResponse';
 import { SixFogConfig } from '@/interfaces/sigfox.interface';
 import { ExternalPathEnum } from '@/utils/enums/externalPathEnum';
