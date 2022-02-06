@@ -1,11 +1,11 @@
 {
     "env": "development",
     "dbConfig": {
-        "host": "localhost",
-        "user": "root",
-        "password": "password",
-        "database": "test",
-        "port": 3306
+        "host": "db-sigfox-do-user-10650039-0.b.db.ondigitalocean.com",
+        "user": "doadmin",
+        "password": "57kR8WpnxAFAfS1B",
+        "database": "defaultdb",
+        "port": 25060
     },
     "secretKey": "secretKey",
     "log": {

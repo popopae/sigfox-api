@@ -1,22 +1,22 @@
 import config from 'config';
 import Knex from 'knex';
+import fs from 'fs';
+import path from 'path';
 import { dbConfig } from '@interfaces/db.interface';
 
-const { host, port, user, password, database }: dbConfig = config.get('dbConfig');
+const db: dbConfig = config.get('dbConfig');
 const dbConnection = {
-  client: 'mysql',
+  client: 'pg',
   connection: {
-    charset: 'utf8',
-    timezone: 'UTC',
-    host: host,
-    port: port,
-    user: user,
-    password: password,
-    database: database,
-  },
-  pool: {
-    min: 2,
-    max: 10,
+    host: db.host,
+    user: db.user,
+    password: db.password,
+    database: db.database,
+    port: db.port,
+    ssl: {
+      rejectUnauthorized: false,
+      ca: fs.readFileSync(path.resolve(__dirname, './../cert/ca-certificate.crt')).toString(),
+    },
   },
 };
 
