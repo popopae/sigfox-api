@@ -1,6 +1,6 @@
-import { HttpException } from '@/exceptions/HttpException';
-import { ICallBack } from '@/interfaces/entity/callback.interface';
-import { CallBack } from '@/models/callback.model';
+import { HttpException } from '../exceptions/HttpException';
+import { ICallBack } from '../interfaces/entity/callback.interface';
+import { CallBack } from '../models/callback.model';
 import { isEmpty } from 'class-validator';
 
 class CallBackService {

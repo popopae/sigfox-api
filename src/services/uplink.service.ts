@@ -1,4 +1,4 @@
-import { Uplink } from '@/models/uplink.model';
+import { Uplink } from '../models/uplink.model';
 
 class UplinkService {
   public async findAll(): Promise<Uplink[]> {

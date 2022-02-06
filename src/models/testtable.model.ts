@@ -1,5 +1,5 @@
 import { Model, ModelObject } from 'objection';
-import { ITestTable } from '@interfaces/entity/testtable.interface';
+import { ITestTable } from '../interfaces/entity/testtable.interface';
 
 export class TestTable extends Model implements ITestTable {
   id!: number;

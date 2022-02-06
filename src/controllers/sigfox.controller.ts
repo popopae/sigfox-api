@@ -1,12 +1,12 @@
-import { ApiResponse } from '@/interfaces/payloads/api/apiResponse';
-import { CreateDeviceRequest } from '@/interfaces/payloads/device/createDeviceRequest';
-import { CreateDeviceResponse } from '@/interfaces/payloads/device/createDeviceResponse';
-import { DeviceResponse } from '@/interfaces/payloads/device/deviceResponse';
-import { DeviceTypeResponse } from '@/interfaces/payloads/device/deviceTypeResponse';
-import { ActionDeviceResponse } from '@/interfaces/payloads/device/actionDeviceResponse';
-import sigFoxService from '@/services/sigfox.service';
+import { ApiResponse } from '../interfaces/payloads/api/apiResponse';
+import { CreateDeviceRequest } from '../interfaces/payloads/device/createDeviceRequest';
+import { CreateDeviceResponse } from '../interfaces/payloads/device/createDeviceResponse';
+import { DeviceResponse } from '../interfaces/payloads/device/deviceResponse';
+import { DeviceTypeResponse } from '../interfaces/payloads/device/deviceTypeResponse';
+import { ActionDeviceResponse } from '../interfaces/payloads/device/actionDeviceResponse';
+import sigFoxService from '../services/sigfox.service';
 import { NextFunction, Request, Response } from 'express';
-import { UpdateDeviceRequest } from '@/interfaces/payloads/device/updateDeviceRequest';
+import { UpdateDeviceRequest } from '../interfaces/payloads/device/updateDeviceRequest';
 
 class SigFoxController {
   public sigFoxService = new sigFoxService();

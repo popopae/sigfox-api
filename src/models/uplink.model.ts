@@ -1,6 +1,6 @@
 import { Model, ModelObject } from 'objection';
-import { IDevice } from '@/interfaces/entity/device.interface';
-import { IUplink } from '@/interfaces/entity/uplink.interface';
+import { IDevice } from '../interfaces/entity/device.interface';
+import { IUplink } from '../interfaces/entity/uplink.interface';
 
 export class Uplink extends Model implements IUplink {
   uplink_id!: number;

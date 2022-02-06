@@ -1,4 +1,4 @@
-import '@/index';
+import './index';
 import config from 'config';
 import compression from 'compression';
 import cookieParser from 'cookie-parser';
@@ -10,10 +10,10 @@ import morgan from 'morgan';
 import { Model } from 'objection';
 import swaggerJSDoc from 'swagger-jsdoc';
 import swaggerUi from 'swagger-ui-express';
-import knex from '@databases';
-import { Routes } from '@interfaces/routes.interface';
-import errorMiddleware from '@middlewares/error.middleware';
-import { logger, stream } from '@utils/logger';
+import knex from './databases';
+import { Routes } from './interfaces/routes.interface';
+import errorMiddleware from './middlewares/error.middleware';
+import { logger, stream } from './utils/logger';
 
 class App {
   public app: express.Application;

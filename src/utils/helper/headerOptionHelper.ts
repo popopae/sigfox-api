@@ -1,4 +1,4 @@
-import { SixFogConfig } from '@/interfaces/sigfox.interface';
+import { SixFogConfig } from '../../interfaces/sigfox.interface';
 import config from 'config';
 
 class HeaderOptionHelper {

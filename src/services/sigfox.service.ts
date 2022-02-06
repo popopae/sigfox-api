@@ -1,11 +1,11 @@
-import { CreateDeviceRequest } from '@/interfaces/payloads/device/createDeviceRequest';
-import { CreateDeviceResponse } from '@/interfaces/payloads/device/createDeviceResponse';
-import { DeviceResponse } from '@/interfaces/payloads/device/deviceResponse';
-import { DeviceTypeResponse } from '@/interfaces/payloads/device/deviceTypeResponse';
-import { ActionDeviceResponse } from '@/interfaces/payloads/device/actionDeviceResponse';
-import { UpdateDeviceRequest } from '@/interfaces/payloads/device/updateDeviceRequest';
-import { ExternalPathEnum } from '@/utils/enums/externalPathEnum';
-import HeaderOptionHelper from '@/utils/helper/headerOptionHelper';
+import { CreateDeviceRequest } from '../interfaces/payloads/device/createDeviceRequest';
+import { CreateDeviceResponse } from '../interfaces/payloads/device/createDeviceResponse';
+import { DeviceResponse } from '../interfaces/payloads/device/deviceResponse';
+import { DeviceTypeResponse } from '../interfaces/payloads/device/deviceTypeResponse';
+import { ActionDeviceResponse } from '../interfaces/payloads/device/actionDeviceResponse';
+import { UpdateDeviceRequest } from '../interfaces/payloads/device/updateDeviceRequest';
+import { ExternalPathEnum } from '../utils/enums/externalPathEnum';
+import HeaderOptionHelper from '../utils/helper/headerOptionHelper';
 import { del, get, post, put } from 'request-promise';
 
 class SigFoxService {

@@ -1,4 +1,4 @@
-import { TestTable } from '@/models/testtable.model';
+import { TestTable } from '../models/testtable.model';
 
 class TestService {
   public async findAll(): Promise<TestTable[]> {

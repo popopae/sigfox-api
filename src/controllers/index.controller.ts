@@ -1,6 +1,6 @@
 import { NextFunction, Request, Response } from 'express';
-import { ITestTable } from '@/interfaces/entity/testtable.interface';
-import testService from '@services/test.service';
+import { ITestTable } from '../interfaces/entity/testtable.interface';
+import testService from '../services/test.service';
 
 class IndexController {
   public testService = new testService();

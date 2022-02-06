@@ -1,4 +1,4 @@
-import { ICallBack } from '@/interfaces/entity/callback.interface';
+import { ICallBack } from '../interfaces/entity/callback.interface';
 import { Model, ModelObject } from 'objection';
 
 export class CallBack extends Model implements ICallBack {

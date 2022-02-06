@@ -1,4 +1,4 @@
-import { Device } from '@/models/device.model';
+import { Device } from '../models/device.model';
 
 class DeviceService {
   public async findAll(): Promise<Device[]> {

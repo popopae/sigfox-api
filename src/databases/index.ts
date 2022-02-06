@@ -2,7 +2,7 @@ import config from 'config';
 import Knex from 'knex';
 import fs from 'fs';
 import path from 'path';
-import { dbConfig } from '@interfaces/db.interface';
+import { dbConfig } from '../interfaces/db.interface';
 
 const db: dbConfig = config.get('dbConfig');
 const dbConnection = {

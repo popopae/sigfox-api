@@ -1,8 +1,8 @@
 import { Router } from 'express';
-import UplinkController from '@controllers/uplink.controller';
-import { Routes } from '@interfaces/routes.interface';
-import validationMiddleware from '@/middlewares/validation.middleware';
-import { UplinkDto } from '@/dtos/payload/uplink/uplink.dto';
+import UplinkController from '../controllers/uplink.controller';
+import { Routes } from '../interfaces/routes.interface';
+import validationMiddleware from '../middlewares/validation.middleware';
+import { UplinkDto } from '../dtos/payload/uplink/uplink.dto';
 
 class UplinkRoute implements Routes {
   public path = '/uplink';

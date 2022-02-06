@@ -1,10 +1,10 @@
-import { IUplink } from '@/interfaces/entity/uplink.interface';
-import uplinkService from '@/services/uplink.service';
-import callBackService from '@/services/callback.service';
+import { IUplink } from '../interfaces/entity/uplink.interface';
+import uplinkService from '../services/uplink.service';
+import callBackService from '../services/callback.service';
 import { NextFunction, Request, Response } from 'express';
-import { ICallBack } from '@/interfaces/entity/callback.interface';
-import { UplinkDto } from '@/dtos/payload/uplink/uplink.dto';
-import { CallBack } from '@/models/callback.model';
+import { ICallBack } from '../interfaces/entity/callback.interface';
+import { UplinkDto } from '../dtos/payload/uplink/uplink.dto';
+import { CallBack } from '../models/callback.model';
 
 class UplinkController {
   public service = new uplinkService();

@@ -1,6 +1,6 @@
 import { Router } from 'express';
-import deviceController from '@controllers/device.controller';
-import { Routes } from '@interfaces/routes.interface';
+import deviceController from '../controllers/device.controller';
+import { Routes } from '../interfaces/routes.interface';
 
 class DeviceRoute implements Routes {
   public path = '/device';

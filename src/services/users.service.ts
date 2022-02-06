@@ -1,9 +1,9 @@
 import { hash } from 'bcrypt';
-import { CreateUserDto } from '@dtos/users.dto';
-import { HttpException } from '@exceptions/HttpException';
-import { User } from '@interfaces/users.interface';
-import { Users } from '@models/users.model';
-import { isEmpty } from '@utils/util';
+import { CreateUserDto } from '../dtos/users.dto';
+import { HttpException } from '../exceptions/HttpException';
+import { User } from '../interfaces/users.interface';
+import { Users } from '../models/users.model';
+import { isEmpty } from '../utils/util';
 
 class UserService {
   public async findAllUser(): Promise<User[]> {

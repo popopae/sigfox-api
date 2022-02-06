@@ -1,6 +1,6 @@
 import { NextFunction, Request, Response } from 'express';
-import { IDevice } from '@/interfaces/entity/device.interface';
-import deviceService from '@services/device.service';
+import { IDevice } from '../interfaces/entity/device.interface';
+import deviceService from '../services/device.service';
 
 class DeviceController {
   public service = new deviceService();

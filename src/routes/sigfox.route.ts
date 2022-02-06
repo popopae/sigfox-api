@@ -1,9 +1,9 @@
 import { Router } from 'express';
-import SigFoxController from '@/controllers/sigfox.controller';
-import { Routes } from '@interfaces/routes.interface';
-import validationMiddleware from '@/middlewares/validation.middleware';
-import { CreateDeviceDto } from '@/dtos/payload/device/createDevice.dto';
-import { UpdateDeviceDto } from '@/dtos/payload/device/updateDevice.dto';
+import SigFoxController from '../controllers/sigfox.controller';
+import { Routes } from '../interfaces/routes.interface';
+import validationMiddleware from '../middlewares/validation.middleware';
+import { CreateDeviceDto } from '../dtos/payload/device/createDevice.dto';
+import { UpdateDeviceDto } from '../dtos/payload/device/updateDevice.dto';
 
 class SigFoxRoute implements Routes {
   public path = '';
