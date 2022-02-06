@@ -1,9 +1,9 @@
 import { NextFunction, Request, Response } from 'express';
 import { ITestTable } from '../interfaces/entity/testtable.interface';
-import testService from '../services/test.service';
+import TestService from '../services/test.service';
 
 class IndexController {
-  public testService = new testService();
+  public testService = new TestService();
 
   public index = (req: Request, res: Response, next: NextFunction): void => {
     try {
@@ -15,8 +15,6 @@ class IndexController {
 
   public getTest = async (req: Request, res: Response, next: NextFunction): Promise<void> => {
     try {
-      console.log('IndexController');
-      console.log(testService);
       const findAllUsersData: ITestTable[] = await this.testService.findAll();
 
       res.status(200).json({ data: findAllUsersData, message: 'findAll' });

@@ -1,8 +1,8 @@
 import { TestTable } from '../models/testtable.model';
 
-class TestService {
+export class TestService {
   public async findAll(): Promise<TestTable[]> {
-    console.log('Test Service');
+    console.log('Test');
     const users: TestTable[] = await TestTable.query().select().from(TestTable.tableName);
     return users;
   }
