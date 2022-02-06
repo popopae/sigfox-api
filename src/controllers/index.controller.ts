@@ -15,6 +15,8 @@ class IndexController {
 
   public getTest = async (req: Request, res: Response, next: NextFunction): Promise<void> => {
     try {
+      console.log('IndexController');
+      console.log(testService);
       const findAllUsersData: ITestTable[] = await this.testService.findAll();
 
       res.status(200).json({ data: findAllUsersData, message: 'findAll' });
