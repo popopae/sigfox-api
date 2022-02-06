@@ -3,8 +3,6 @@ import { ITestTable } from '../interfaces/entity/testtable.interface';
 import TestService from '../services/test.service';
 
 class IndexController {
-  public testService = new TestService();
-
   public index = (req: Request, res: Response, next: NextFunction): void => {
     try {
       res.sendStatus(200);
@@ -15,7 +13,8 @@ class IndexController {
 
   public getTest = async (req: Request, res: Response, next: NextFunction): Promise<void> => {
     try {
-      const findAllUsersData: ITestTable[] = await this.testService.findAll();
+      const testService = new TestService();
+      const findAllUsersData: ITestTable[] = await testService.findAll();
 
       res.status(200).json({ data: findAllUsersData, message: 'findAll' });
     } catch (error) {

@@ -4,16 +4,15 @@ import { CreateDeviceResponse } from '../interfaces/payloads/device/createDevice
 import { DeviceResponse } from '../interfaces/payloads/device/deviceResponse';
 import { DeviceTypeResponse } from '../interfaces/payloads/device/deviceTypeResponse';
 import { ActionDeviceResponse } from '../interfaces/payloads/device/actionDeviceResponse';
-import sigFoxService from '../services/sigfox.service';
+import SigFoxService from '../services/sigfox.service';
 import { NextFunction, Request, Response } from 'express';
 import { UpdateDeviceRequest } from '../interfaces/payloads/device/updateDeviceRequest';
 
 class SigFoxController {
-  public sigFoxService = new sigFoxService();
-
   public getListDeviceType = async (req: Request, res: Response): Promise<void> => {
     try {
-      const result: DeviceTypeResponse = await this.sigFoxService.getListDeviceType();
+      const sigFoxService = new SigFoxService();
+      const result: DeviceTypeResponse = await sigFoxService.getListDeviceType();
       const apiResponse: ApiResponse<DeviceTypeResponse> = {
         data: result,
         isError: false,
@@ -30,7 +29,8 @@ class SigFoxController {
 
   public getListDevice = async (req: Request, res: Response): Promise<void> => {
     try {
-      const result: DeviceResponse = await this.sigFoxService.getListDevice();
+      const sigFoxService = new SigFoxService();
+      const result: DeviceResponse = await sigFoxService.getListDevice();
       const apiResponse: ApiResponse<DeviceResponse> = {
         data: result,
         isError: false,
@@ -47,8 +47,9 @@ class SigFoxController {
 
   public createDevice = async (req: Request, res: Response): Promise<void> => {
     try {
+      const sigFoxService = new SigFoxService();
       const request: CreateDeviceRequest = req.body;
-      const result: CreateDeviceResponse = await this.sigFoxService.createDevice(request);
+      const result: CreateDeviceResponse = await sigFoxService.createDevice(request);
       const apiResponse: ApiResponse<CreateDeviceResponse> = {
         data: result,
         isError: false,
@@ -65,9 +66,10 @@ class SigFoxController {
 
   public updateDevice = async (req: Request, res: Response): Promise<void> => {
     try {
+      const sigFoxService = new SigFoxService();
       const request: UpdateDeviceRequest = req.body;
       const deviceId: string = req.params.id;
-      const result: ActionDeviceResponse = await this.sigFoxService.updateDevice(deviceId, request);
+      const result: ActionDeviceResponse = await sigFoxService.updateDevice(deviceId, request);
       const apiResponse: ApiResponse<ActionDeviceResponse> = {
         data: result,
         isError: false,
@@ -84,8 +86,9 @@ class SigFoxController {
 
   public removeDevice = async (req: Request, res: Response): Promise<void> => {
     try {
+      const sigFoxService = new SigFoxService();
       const deviceId: string = req.params.id;
-      const result: ActionDeviceResponse = await this.sigFoxService.removeDevice(deviceId);
+      const result: ActionDeviceResponse = await sigFoxService.removeDevice(deviceId);
       const apiResponse: ApiResponse<ActionDeviceResponse> = {
         data: result,
         isError: false,
