@@ -23,14 +23,15 @@ class UplinkController {
   public callBack = async (req: Request, res: Response, next: NextFunction): Promise<void> => {
     try {
       const uplinkData: UplinkDto = req.body;
+      console.log(uplinkData);
       const data: ICallBack = {
-        deviceTypeId: uplinkData.deviceTypeId,
-        deviceId: uplinkData.deviceId,
+        device_type_id: uplinkData.deviceTypeId,
+        device_id: uplinkData.deviceId,
         callback_data: uplinkData.data,
         callback_status: 'success',
         created_date: new Date(),
       };
-
+      console.log(data);
       const result: CallBack = await this.callBackService.createCallBack(data);
 
       res.status(200).json({ data: result, message: 'create success' });
