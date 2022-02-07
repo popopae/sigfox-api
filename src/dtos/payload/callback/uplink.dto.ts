@@ -1,4 +1,4 @@
-import { IsNotEmpty, IsString } from 'class-validator';
+import { IsNotEmpty, IsNumber, IsString } from 'class-validator';
 
 export class UplinkDto {
   @IsNotEmpty()
@@ -12,4 +12,8 @@ export class UplinkDto {
   @IsNotEmpty()
   @IsString()
   public data: string;
+
+  @IsNotEmpty()
+  @IsNumber()
+  public time: number;
 }

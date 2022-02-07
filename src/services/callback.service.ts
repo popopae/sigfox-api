@@ -18,6 +18,7 @@ class CallBackService {
       device_id: uplinkData.deviceId,
       callback_data: uplinkData.data,
       callback_status: 'success',
+      callback_time: uplinkData.time,
       created_date: new Date(),
     };
 

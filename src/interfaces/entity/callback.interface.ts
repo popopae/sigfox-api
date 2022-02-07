@@ -5,4 +5,5 @@ export interface ICallBack {
   callback_data?: string;
   callback_status?: string;
   created_date?: Date;
+  callback_time?: number;
 }
