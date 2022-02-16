@@ -15,6 +15,13 @@ class DeviceService {
 
     return find;
   }
+
+  public async findByDeviceId(item: number): Promise<Device> {
+    const find: Device = await Device.query().select().from(Device.tableName).where(Device.deviceId, '=', item).first();
+    if (ValidateHelper.isObjectEmptyNullUndefined(find)) throw new HttpException(HttpStatusCodeEnum.NotFound, `Device ${item} Not Found`);
+
+    return find;
+  }
 }
 
 export default DeviceService;

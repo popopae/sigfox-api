@@ -6,6 +6,7 @@ import { UplinkDto } from '../dtos/payload/callback/uplink.dto';
 import { CallBack } from '../models/callback.model';
 import { BidirDto } from '@/dtos/payload/callback/bidir.dto';
 import { HttpStatusCodeEnum } from '@/utils/enums/httpStatusEnum';
+import { LastedUplinkResponse } from '@/interfaces/payloads/callback/lastedUplinkResponse';
 
 class CallBackController {
   public findAll = async (req: Request, res: Response, next: NextFunction): Promise<void> => {
@@ -23,7 +24,7 @@ class CallBackController {
     try {
       const service = new UplinkService();
       const deviceId = Number(req.params.id);
-      const find: IUplink = await service.findLastedByDeviceId(deviceId);
+      const find: LastedUplinkResponse = await service.findLastedByDeviceId(deviceId);
 
       res.status(HttpStatusCodeEnum.OK).json({ data: find, message: 'find device lasted' });
     } catch (error) {
