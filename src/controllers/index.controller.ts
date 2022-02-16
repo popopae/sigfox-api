@@ -1,3 +1,4 @@
+import { HttpStatusCodeEnum } from '@/utils/enums/httpStatusEnum';
 import { NextFunction, Request, Response } from 'express';
 import { ITestTable } from '../interfaces/entity/testtable.interface';
 import TestService from '../services/test.service';
@@ -5,7 +6,7 @@ import TestService from '../services/test.service';
 class IndexController {
   public index = (req: Request, res: Response, next: NextFunction): void => {
     try {
-      res.sendStatus(200);
+      res.sendStatus(HttpStatusCodeEnum.OK);
     } catch (error) {
       next(error);
     }
@@ -16,7 +17,7 @@ class IndexController {
       const testService = new TestService();
       const findAllUsersData: ITestTable[] = await testService.findAll();
 
-      res.status(200).json({ data: findAllUsersData, message: 'findAll' });
+      res.status(HttpStatusCodeEnum.OK).json({ data: findAllUsersData, message: 'findAll' });
     } catch (error) {
       next(error);
     }

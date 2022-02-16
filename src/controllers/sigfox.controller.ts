@@ -7,6 +7,7 @@ import { ActionDeviceResponse } from '../interfaces/payloads/device/actionDevice
 import SigFoxService from '../services/sigfox.service';
 import { NextFunction, Request, Response } from 'express';
 import { UpdateDeviceRequest } from '../interfaces/payloads/device/updateDeviceRequest';
+import { HttpStatusCodeEnum } from '@/utils/enums/httpStatusEnum';
 
 class SigFoxController {
   public getListDeviceType = async (req: Request, res: Response): Promise<void> => {
@@ -17,13 +18,13 @@ class SigFoxController {
         data: result,
         isError: false,
       };
-      res.status(200).json(apiResponse);
+      res.status(HttpStatusCodeEnum.OK).json(apiResponse);
     } catch (error) {
       const response: ApiResponse<any> = {
         data: error,
         isError: true,
       };
-      res.status(400).json(response);
+      res.status(HttpStatusCodeEnum.BadRequest).json(response);
     }
   };
 
@@ -35,13 +36,13 @@ class SigFoxController {
         data: result,
         isError: false,
       };
-      res.status(200).json(apiResponse);
+      res.status(HttpStatusCodeEnum.OK).json(apiResponse);
     } catch (error) {
       const response: ApiResponse<any> = {
         data: error,
         isError: true,
       };
-      res.status(400).json(response);
+      res.status(HttpStatusCodeEnum.BadRequest).json(response);
     }
   };
 
@@ -54,13 +55,13 @@ class SigFoxController {
         data: result,
         isError: false,
       };
-      res.status(200).json(apiResponse);
+      res.status(HttpStatusCodeEnum.OK).json(apiResponse);
     } catch (error) {
       const response: ApiResponse<any> = {
         data: error,
         isError: true,
       };
-      res.status(400).json(response);
+      res.status(HttpStatusCodeEnum.BadRequest).json(response);
     }
   };
 
@@ -74,13 +75,13 @@ class SigFoxController {
         data: result,
         isError: false,
       };
-      res.status(200).json(apiResponse);
+      res.status(HttpStatusCodeEnum.OK).json(apiResponse);
     } catch (error) {
       const response: ApiResponse<any> = {
         data: error,
         isError: true,
       };
-      res.status(400).json(response);
+      res.status(HttpStatusCodeEnum.BadRequest).json(response);
     }
   };
 
@@ -93,19 +94,19 @@ class SigFoxController {
         data: result,
         isError: false,
       };
-      res.status(200).json(apiResponse);
+      res.status(HttpStatusCodeEnum.OK).json(apiResponse);
     } catch (error) {
       const response: ApiResponse<any> = {
         data: error,
         isError: true,
       };
-      res.status(400).json(response);
+      res.status(HttpStatusCodeEnum.BadRequest).json(response);
     }
   };
 
   public index = (req: Request, res: Response, next: NextFunction): void => {
     try {
-      res.sendStatus(200);
+      res.sendStatus(HttpStatusCodeEnum.OK);
     } catch (error) {
       next(error);
     }

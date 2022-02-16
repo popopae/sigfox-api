@@ -7,7 +7,7 @@ export class CallBack extends Model implements ICallBack {
   device_id!: string;
   callback_data!: string;
   callback_status!: string;
-  callback_time!: number;
+  callback_time!: Date;
   created_date!: Date;
 
   static tableName = 'callback'; // database table name

@@ -10,7 +10,7 @@ export class Uplink extends Model implements IUplink {
   active_power!: number;
   power_factor!: number;
   frequency!: number;
-  statue_onoff!: boolean;
+  statue_onoff!: number;
   controller_temp!: number;
   active_energy!: number;
   brightness!: number;
@@ -20,7 +20,8 @@ export class Uplink extends Model implements IUplink {
   device!: IDevice;
 
   static tableName = 'uplink'; // database table name
-  static idColumn = 'uplink_id'; // id column name
+  static uplinkId = 'uplink_id'; // id column name
+  static deviceId = 'device_id'; // id column name
 }
 
 export type UplinkShape = ModelObject<Uplink>;

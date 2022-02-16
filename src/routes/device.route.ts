@@ -13,6 +13,7 @@ class DeviceRoute implements Routes {
 
   private initializeRoutes() {
     this.router.get(`${this.path}`, this.controller.findAll);
+    this.router.get(`${this.path}/:id`, this.controller.findByDeviceCode);
   }
 }
 
