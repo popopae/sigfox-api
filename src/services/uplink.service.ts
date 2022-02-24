@@ -8,7 +8,7 @@ class UplinkService {
     return res;
   }
 
-  public async findLastedByDeviceId(item: number): Promise<LastedUplinkResponse> {
+  public async findLastedByDeviceCode(item: string): Promise<LastedUplinkResponse> {
     const res: LastedUplinkResponse = await Uplink.query()
       .select(
         `${LastedUplinkColumn.uplink_id}`,
@@ -31,7 +31,7 @@ class UplinkService {
       )
       .from(Uplink.tableName)
       .innerJoin(Device.tableName, `${Uplink.tableName}.${Uplink.deviceId}`, `${Device.tableName}.${Device.deviceId}`)
-      .where(`${Uplink.tableName}.${Uplink.deviceId}`, '=', item)
+      .where(`${Device.tableName}.${Device.deviceCode}`, '=', item)
       .orderBy(`${Uplink.tableName}.${Uplink.uplinkId}`, 'desc')
       .first();
     return res;

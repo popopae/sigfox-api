@@ -1,3 +1,5 @@
+import { DataTableRequestDto } from '@/dtos/payload/datatable/dataTableRequest.dto';
+import validationMiddleware from '@/middlewares/validation.middleware';
 import { Router } from 'express';
 import deviceController from '../controllers/device.controller';
 import { Routes } from '../interfaces/routes.interface';
@@ -14,6 +16,7 @@ class DeviceRoute implements Routes {
   private initializeRoutes() {
     this.router.get(`${this.path}`, this.controller.findAll);
     this.router.get(`${this.path}/:id`, this.controller.findByDeviceCode);
+    this.router.post(`${this.path}/search`, validationMiddleware(DataTableRequestDto, 'body', true), this.controller.findByAdvanceSearch);
   }
 }
 

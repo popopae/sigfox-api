@@ -23,8 +23,8 @@ class CallBackController {
   public getLastedUplink = async (req: Request, res: Response, next: NextFunction): Promise<void> => {
     try {
       const service = new UplinkService();
-      const deviceId = Number(req.params.id);
-      const find: LastedUplinkResponse = await service.findLastedByDeviceId(deviceId);
+      const deviceCode = req.params.code;
+      const find: LastedUplinkResponse = await service.findLastedByDeviceCode(deviceCode);
 
       res.status(HttpStatusCodeEnum.OK).json({ data: find, message: 'find device lasted' });
     } catch (error) {

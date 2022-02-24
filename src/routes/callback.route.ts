@@ -16,7 +16,7 @@ class CallBackRoute implements Routes {
 
   private initializeRoutes() {
     this.router.get(`${this.path}`, this.controller.findAll);
-    this.router.get(`${this.path}/uplink/:id`, this.controller.getLastedUplink);
+    this.router.get(`${this.path}/uplink/:code`, this.controller.getLastedUplink);
     this.router.post(`${this.path}/uplink`, validationMiddleware(UplinkDto, 'body', true), this.controller.callBack);
     this.router.post(`${this.path}/bidir`, validationMiddleware(BidirDto, 'body', true), this.controller.bidir);
   }
