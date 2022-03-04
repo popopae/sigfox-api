@@ -23,7 +23,7 @@ export class Device extends Model implements IDevice {
   uplinks!: IUplink[];
 
   static tableName = 'device'; // database table name
-  static deviceId = 'device_id'; // id column name
+  static deviceId = 'id'; // id column name
   static deviceCode = 'device_code'; // id column name
 }
 

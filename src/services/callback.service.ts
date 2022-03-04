@@ -40,7 +40,7 @@ class CallBackService {
     };
 
     const uplinkData: IUplink = {
-      device_id: deviceData.device_id,
+      device_id: deviceData.id,
       current_amp: decodeValue.current,
       voltage: decodeValue.voltage,
       active_power: decodeValue.activePower,
@@ -53,8 +53,7 @@ class CallBackService {
       status_device: decodeValue.noLoad,
       created_date: new Date(),
     };
-    console.log(callBackData);
-    console.log(uplinkData);
+
     const resultCallBack: CallBack = await CallBack.query()
       .insert({ ...callBackData })
       .into(CallBack.tableName);
