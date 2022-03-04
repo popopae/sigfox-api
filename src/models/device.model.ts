@@ -3,7 +3,7 @@ import { IDevice } from '../interfaces/entity/device.interface';
 import { IUplink } from '../interfaces/entity/uplink.interface';
 
 export class Device extends Model implements IDevice {
-  device_id!: number;
+  id!: number;
   device_code!: string;
   device_name!: string;
   device_type_id!: string;

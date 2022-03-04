@@ -1,7 +1,7 @@
 import { IDevice } from './device.interface';
 
 export interface IUplink {
-  uplink_id?: number;
+  id?: number;
   device_id?: number;
   current_amp?: number;
   voltage?: number;

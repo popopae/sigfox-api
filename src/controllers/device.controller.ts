@@ -1,4 +1,3 @@
-import { DataTableRequestDto } from '@/dtos/payload/datatable/dataTableRequest.dto';
 import { ApiResponse } from '@/interfaces/payloads/api/apiResponse';
 import { DataTableRequest } from '@/interfaces/payloads/datatable/dataTableRequest';
 import { DataTableResponse } from '@/interfaces/payloads/datatable/dataTableResponse';

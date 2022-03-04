@@ -20,7 +20,7 @@ export interface LastedUplinkResponse {
 }
 
 export class LastedUplinkColumn {
-  static uplink_id = 'uplink.uplink_id';
+  static uplink_id = 'uplink.id';
   static device_id = 'uplink.device_id';
   static current_amp = 'uplink.current_amp';
   static voltage = 'uplink.voltage';

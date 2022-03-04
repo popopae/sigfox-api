@@ -3,7 +3,7 @@ import { IDevice } from '../interfaces/entity/device.interface';
 import { IUplink } from '../interfaces/entity/uplink.interface';
 
 export class Uplink extends Model implements IUplink {
-  uplink_id!: number;
+  id!: number;
   device_id!: number;
   current_amp!: number;
   voltage!: number;
@@ -20,7 +20,7 @@ export class Uplink extends Model implements IUplink {
   device!: IDevice;
 
   static tableName = 'uplink'; // database table name
-  static uplinkId = 'uplink_id'; // id column name
+  static uplinkId = 'id'; // id column name
   static deviceId = 'device_id'; // id column name
 }
 

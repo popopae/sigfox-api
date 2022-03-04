@@ -1,7 +1,7 @@
 import { IUplink } from './uplink.interface';
 
 export interface IDevice {
-  device_id: number;
+  id: number;
   device_name: string;
   device_code?: string;
   device_type_id?: string;

@@ -53,7 +53,8 @@ class CallBackService {
       status_device: decodeValue.noLoad,
       created_date: new Date(),
     };
-
+    console.log(callBackData);
+    console.log(uplinkData);
     const resultCallBack: CallBack = await CallBack.query()
       .insert({ ...callBackData })
       .into(CallBack.tableName);
